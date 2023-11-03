@@ -51,6 +51,8 @@ pipeline {
                 sh "mvn test"
                 // // Switch jenkins user
                 // sh "sudo su jenkins"
+                // Print current user
+                sh "whoami"
                 // Docker build
                 sh "docker build -t kimberly0/final-sprint-back-end:v1 ."
                 // // Exit jenkins user
