@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  mysql:
+    image: kimberly0/final-sprint-mysql
+    build: ./calculator-api
+    ports:
+      - target: 3306
+        published: 3306
+  back-end:
+    image: kimberly0/final-sprint-back-end
+    build:
+      context: ./lbg-car-spring-app-starter
+    ports:
+      - target: 8080
+        published: 8080
+  front-end:
+    image: kimberly0/final-sprint-front-end
+    build:
+      context: ./lbg-car-react-starter
+    ports:
+      - target: 80
+        published: 80
