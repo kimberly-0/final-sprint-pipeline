@@ -13,7 +13,7 @@ pipeline {
           // Change directory to the front-end folder
             sh "cd lbg-car-spring-app-starter"
             // Install the ReactJS dependencies
-            sh "mvn install"
+            sh "mvn clean compile"
             // Run the ReactJS tests
             sh "mvn test"
             // Change directory to the parent folder
@@ -25,9 +25,9 @@ pipeline {
             // Change directory to the front-end folder
             sh "cd lbg-car-react-starter"
             // Install the ReactJS dependencies
-            sh "yarn install"
+            sh "npm install"
             // Run the ReactJS tests
-            sh "yarn test"
+            sh "npm test"
             // Change directory to the parent folder
             sh "cd .."
         }
