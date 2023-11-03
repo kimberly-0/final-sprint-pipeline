@@ -32,5 +32,15 @@ pipeline {
             sh "cd .."
         }
     }
+    stage('Push docker images and cleanup') {
+        steps {
+          
+        }
+    }
+    stage('Deploy to server') {
+        steps {
+          
+        }
+    }
   }
 }
