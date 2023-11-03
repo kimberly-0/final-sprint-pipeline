@@ -52,6 +52,7 @@ pipeline {
                 // // Switch jenkins user
                 // sh "sudo su jenkins"
                 // Print current user
+                sh "echo 'user: '"
                 sh "whoami"
                 // Docker build
                 sh "docker build -t kimberly0/final-sprint-back-end:v1 ."
