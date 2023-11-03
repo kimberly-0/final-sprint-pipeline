@@ -1,9 +1,13 @@
 pipeline {
-  agent jenkins
+  agent any
 
   tools {
     // Install the Maven version configured as "M3" and add it to the path.
     maven "M3"
+  }
+
+  environment {
+      SERVER_URL = "http://35.210.48.104:8000/" // IP of target deployment server
   }
 
   stages {
