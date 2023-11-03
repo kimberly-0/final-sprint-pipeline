@@ -25,9 +25,9 @@ pipeline {
             // Change directory to the front-end folder
             sh "cd lbg-car-react-starter"
             // Install the ReactJS dependencies
-            sh "npm install"
+            sh "yarn install"
             // Run the ReactJS tests
-            sh "npm test"
+            sh "yarn test"
             // Change directory to the parent folder
             sh "cd .."
         }
