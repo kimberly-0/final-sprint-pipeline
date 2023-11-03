@@ -29,8 +29,12 @@ pipeline {
     
                 // Run the ReactJS tests
                 sh "yarn test"
+                // Switch jenkins user
+                sh "sudo su jenkins"
                 // Docker build
                 sh "docker build -t kimberly0/final-sprint-front-end:v1 ."
+                // Exit jenkins user
+                sh "exit"
             }
         }
     }
@@ -41,8 +45,12 @@ pipeline {
                 sh "mvn clean compile"
                 // Run the tests
                 sh "mvn test"
+                // Switch jenkins user
+                sh "sudo su jenkins"
                 // Docker build
                 sh "docker build -t kimberly0/final-sprint-back-end:v1 ."
+                // Exit jenkins user
+                sh "exit"
             }
         }
     }
