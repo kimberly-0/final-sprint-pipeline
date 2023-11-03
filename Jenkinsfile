@@ -30,7 +30,7 @@ pipeline {
                 // Run the ReactJS tests
                 sh "yarn test"
                 // Docker build
-                sh "sudo docker build -t kimberly0/final-sprint-front-end:v1 ."
+                sh "docker build -t kimberly0/final-sprint-front-end:v1 ."
             }
         }
     }
@@ -42,7 +42,7 @@ pipeline {
                 // Run the tests
                 sh "mvn test"
                 // Docker build
-                sh "sudo docker build -t kimberly0/final-sprint-back-end:v1 ."
+                sh "docker build -t kimberly0/final-sprint-back-end:v1 ."
             }
         }
     }
@@ -57,7 +57,7 @@ pipeline {
     // }
     stage('Deploy to server') {
         steps {
-          sh "sudo docker compose up -d --build"
+          sh "docker compose up -d --build"
         }
     }
   }
